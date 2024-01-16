@@ -1,0 +1,129 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;0,400;0,500;1,600&display=swap');
+
+* {
+	margin: 0;
+	padding: 0;
+}
+
+body {
+	font-family: 'Poppins', sans-serif;
+}
+
+main {
+	margin: 20px;
+}
+
+h1 {
+	color: navy;
+	margin: 16px;
+}
+
+main .card {
+	border: solid 1px black;
+	margin: 16px;
+	padding: 16px;
+	box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+}
+
+main .card .header {
+	display: flex;
+	gap: 1rem;
+	margin-bottom: 16px;
+}
+
+main .card .header img {
+	border-radius: 50%;
+	width: 48px;
+	height: 48px;
+	box-shadow: rgba(9, 30, 66, 0.25) 0px 4px 8px -2px,
+		rgba(9, 30, 66, 0.08) 0px 0px 0px 1px;
+}
+
+main .card .header .name {
+	font-size: small;
+	display: inline-block;
+	font-weight: 500;
+}
+
+main .card .header .handle {
+	font-weight: 300;
+	font-size: smaller;
+}
+
+main .card .text {
+	font-weight: 300;
+	font-size: small;
+}
+
+main .card .btn-container {
+	margin-top: 10px;
+	display: flex;
+	gap: 0.5rem;
+}
+
+main .card .btn-container .like-btn,
+main .card .btn-container .comment-btn,
+main .card .btn-container .delete-btn,
+main .bottom-bar .load-btn {
+	color: white;
+	padding: 4px 8px;
+	border-radius: 20px;
+	border: solid white 1px;
+	transition: all ease-in-out 300ms;
+	box-shadow: rgba(0, 0, 0, 0.1) 0px 1px 2px 0px;
+}
+
+main .card .btn-container .like-btn:hover,
+main .card .btn-container .comment-btn:hover,
+main .card .btn-container .delete-btn:hover,
+main .bottom-bar .load-btn:hover {
+	background-color: white;
+}
+
+main .card .btn-container .like-btn {
+	background-color: rgb(53, 100, 41);
+}
+
+main .card .btn-container .comment-btn {
+	background-color: rgb(41, 72, 100);
+}
+
+main .card .btn-container .delete-btn {
+	background-color: rgb(137, 50, 47);
+}
+
+main .bottom-bar .load-btn {
+	background-color: black;
+}
+
+main .card .btn-container .like-btn:hover {
+	color: rgb(53, 100, 41);
+	border: rgb(53, 100, 41) solid 1px;
+}
+
+main .card .btn-container .comment-btn:hover {
+	color: rgb(41, 72, 100);
+	border: rgb(41, 72, 100) solid 1px;
+}
+
+main .card .btn-container .delete-btn:hover {
+	color: rgb(137, 50, 47);
+	border: rgb(137, 50, 47) solid 1px;
+}
+
+main .bottom-bar .load-btn:hover {
+	color: black;
+	border: black solid 1px;
+}
+
+main .bottom-bar {
+	margin: 20px;
+	display: flex;
+	justify-content: center;
+}
+
+main .bottom-bar {
+	margin: 20px;
+	display: flex;
+	justify-content: center;
+}

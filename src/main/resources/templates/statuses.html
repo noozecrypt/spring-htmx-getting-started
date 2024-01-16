@@ -1,0 +1,37 @@
+<html xmlns:th="https://www.thymeleaf.org" lang="en">
+    <div th:each="status: ${statuses}" class="card">
+        <div class="header">
+            <img
+                    src="https://via.placeholder.com/48"
+                    alt="User Avatar"
+            />
+            <div>
+                <h5 class="name" th:text="${status.userDisplayName()}">
+                    User Display Name
+                </h5>
+                <p class="handle" th:text="${status.userHandle()}">
+                    User Handle
+                </p>
+            </div>
+        </div>
+        <p class="text" th:text="${status.content()}">
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
+            do eiusmod tempor incididunt ut labore et dolore magna
+            aliqua. Ut enim ad minim veniam, quis nostrud exercitation
+            ullamco laboris nisi ut aliquip ex ea commodo consequat.
+            Duis aute irure dolor in reprehenderit in voluptate velit
+            esse cillum dolore eu fugiat nulla pariatur. Excepteur sint
+            occaecat cupidatat non proident, sunt in culpa qui officia
+            deserunt mollit anim id est laborum.
+        </p>
+        <div class="btn-container">
+            <button class="like-btn">Like</button>
+            <button class="comment-btn">Comment</button>
+            <button class="delete-btn">Delete</button>
+        </div>
+    </div>
+    <div class="bottom-bar" id="replaceTarget" th:if="${isNext == true}">
+        <button class="load-btn" th:hx-get="${next}" hx-target="#replaceTarget" hx-swap="outerHTML">Load More ...</button>
+        <img class="htmx-indicator" src="/spinner.gif" />
+    </div>
+</html>

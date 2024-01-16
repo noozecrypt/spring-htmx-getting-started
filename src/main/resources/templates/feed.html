@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html xmlns:th="https://www.thymeleaf.org" lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta
+			name="viewport"
+			content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0"
+		/>
+		<meta http-equiv="X-UA-Compatible" content="ie=edge" />
+		<title>My Feed</title>
+		<script src="https://unpkg.com/htmx.org@1.9.10"></script>
+		<link rel="stylesheet" href="style.css" />
+	</head>
+	<body>
+		<main>
+			<h1>Feed</h1>
+			<div th:each="status: ${statuses}" class="card">
+				<div class="header">
+					<img
+						src="https://via.placeholder.com/48"
+						alt="User Avatar"
+					/>
+					<div>
+						<h5 class="name" th:text="${status.userDisplayName()}">
+							User Display Name
+						</h5>
+						<p class="handle" th:text="${status.userHandle()}">
+							User Handle
+						</p>
+					</div>
+				</div>
+				<p class="text" th:text="${status.content()}">
+					Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
+					do eiusmod tempor incididunt ut labore et dolore magna
+					aliqua. Ut enim ad minim veniam, quis nostrud exercitation
+					ullamco laboris nisi ut aliquip ex ea commodo consequat.
+					Duis aute irure dolor in reprehenderit in voluptate velit
+					esse cillum dolore eu fugiat nulla pariatur. Excepteur sint
+					occaecat cupidatat non proident, sunt in culpa qui officia
+					deserunt mollit anim id est laborum.
+				</p>
+				<div class="btn-container">
+					<button class="like-btn">Like</button>
+					<button class="comment-btn">Comment</button>
+					<button class="delete-btn">Delete</button>
+				</div>
+			</div>
+			<div class="bottom-bar" id="replaceTarget">
+				<button class="load-btn" hx-get="/statuses?page=2" hx-target="#replaceTarget" hx-swap="outerHTML">Load More ...</button>
+			</div>
+		</main>
+	</body>
+</html>
